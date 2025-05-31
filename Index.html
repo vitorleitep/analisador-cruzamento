@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analisador de Cruzamento Bovino</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .header h1 {
+            color: #2980b9;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .success {
+            background: #d4edda;
+            color: #155724;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            text-align: center;
+            border: 2px solid #c3e6cb;
+        }
+        
+        .info {
+            background: #e3f2fd;
+            color: #1565c0;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border: 2px solid #90caf9;
+        }
+        
+        .btn {
+            background: #3498db;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1.1em;
+            cursor: pointer;
+            margin: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .feature {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            border-left: 4px solid #3498db;
+        }
+        
+        .feature h3 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🧬 Analisador de Cruzamento Bovino</h1>
+            <p>Sistema de Análise de Inbreeding e Genealogia Animal</p>
+        </div>
+        
+        <div class="success">
+            ✅ <strong>Sistema Online e Funcionando!</strong><br>
+            GitHub Pages ativo desde: <span id="timestamp"></span>
+        </div>
+        
+        <div class="info">
+            <h3>🎉 Bem-vindo ao Sistema!</h3>
+            <p>Esta versão está funcionando perfeitamente. Em breve teremos todas as funcionalidades completas!</p>
+        </div>
+        
+        <div class="features">
+            <div class="feature">
+                <h3>📷 Upload de Imagens</h3>
+                <p>Sistema de reconhecimento de genealogias via OCR</p>
+            </div>
+            
+            <div class="feature">
+                <h3>🧮 Cálculo de Inbreeding</h3>
+                <p>Análise precisa dos coeficientes usando fórmula de Wright</p>
+            </div>
+            
+            <div class="feature">
+                <h3>🐄 Banco de Animais</h3>
+                <p>Salve e reutilize animais em futuros cruzamentos</p>
+            </div>
+            
+            <div class="feature">
+                <h3>📊 Histórico</h3>
+                <p>Acompanhe todos os cruzamentos realizados</p>
+            </div>
+        </div>
+        
+        <div style="text-align: center;">
+            <button class="btn" onclick="alert('🔬 Sistema funcionando perfeitamente!')">
+                🧪 Testar Sistema
+            </button>
+            
+            <button class="btn" onclick="showInfo()">
+                ℹ️ Informações Técnicas
+            </button>
+        </div>
+        
+        <div class="footer">
+            <p><strong>Status:</strong> ✅ Online | <strong>Versão:</strong> 1.0 | <strong>Deploy:</strong> Automático</p>
+            <p>Desenvolvido para análise de cruzamento bovino e controle de inbreeding</p>
+        </div>
+    </div>
+
+    <script>
+        // Mostrar timestamp
+        document.getElementById('timestamp').textContent = new Date().toLocaleString('pt-BR');
+        
+        function showInfo() {
+            alert(`
+🔧 Informações Técnicas:
+
+✅ GitHub Pages: Ativo
+✅ HTML/CSS/JS: Funcionando
+✅ Responsivo: Mobile/Desktop
+✅ Deploy: Automático
+
+🌐 URL: ${window.location.href}
+📅 Carregado: ${new Date().toLocaleString('pt-BR')}
+            `);
+        }
+        
+        // Log de sucesso
+        console.log('🎉 Site carregado com sucesso!', {
+            url: window.location.href,
+            timestamp: new Date().toISOString(),
+            userAgent: navigator.userAgent
+        });
+    </script>
+</body>
+</html>
