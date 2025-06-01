@@ -96,6 +96,420 @@
             display: block;
         }
 
+        .breeding-section {
+            display: grid;
+            grid-template-columns: 1fr 100px 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+            align-items: center;
+        }
+
+        .parent-section {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .male-section {
+            border-left: 5px solid #3498db;
+        }
+
+        .female-section {
+            border-left: 5px solid #e91e63;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        .male-title {
+            color: #3498db;
+        }
+
+        .female-title {
+            color: #e91e63;
+        }
+
+        .vs-symbol {
+            text-align: center;
+            font-size: 4em;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #3498db, #e91e63);
+            color: white;
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            margin: 0 auto;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .upload-area {
+            border: 3px dashed #3498db;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .upload-area:hover {
+            border-color: #2980b9;
+            background: #e3f2fd;
+        }
+
+        .upload-area.dragover {
+            border-color: #27ae60;
+            background: #d5e8d4;
+            transform: scale(1.02);
+        }
+
+        .female-upload {
+            border-color: #e91e63;
+        }
+
+        .female-upload:hover {
+            border-color: #c2185b;
+            background: #fce4ec;
+        }
+
+        .upload-input {
+            display: none;
+        }
+
+        .upload-button {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .female-upload-button {
+            background: linear-gradient(135deg, #e91e63, #c2185b);
+        }
+
+        .upload-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
+        }
+
+        .image-preview {
+            max-width: 100%;
+            max-height: 200px;
+            border-radius: 10px;
+            margin: 15px auto;
+            display: none;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .image-preview.show {
+            display: block;
+        }
+
+        .upload-status {
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 8px;
+            font-size: 0.9em;
+            display: none;
+        }
+
+        .upload-status.success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+            display: block;
+        }
+
+        .upload-status.error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+            display: block;
+        }
+
+        .animal-form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .form-group input, .form-group select {
+            padding: 10px;
+            border: 2px solid #e1e8ed;
+            border-radius: 8px;
+            font-size: 0.9em;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus, .form-group select:focus {
+            outline: none;
+            border-color: #3498db;
+        }
+
+        .save-animal-checkbox {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 15px;
+            padding: 10px;
+            background: #e8f5e8;
+            border-radius: 8px;
+        }
+
+        .save-animal-checkbox input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+        }
+
+        .analyze-button {
+            background: linear-gradient(135deg, #27ae60, #2ecc71);
+            color: white;
+            padding: 20px 50px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.3em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            margin: 30px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .analyze-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(46, 204, 113, 0.4);
+        }
+
+        .analyze-button:disabled {
+            background: #95a5a6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 40px;
+        }
+
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #3498db;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .results-section {
+            display: none;
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 30px;
+            margin-top: 30px;
+        }
+
+        .offspring-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .offspring-title {
+            font-size: 2em;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .parents-info {
+            background: linear-gradient(135deg, #3498db, #e91e63);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 25px;
+            display: inline-block;
+            font-weight: bold;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .stat-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-value {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .inbreeding-value {
+            color: #e74c3c;
+        }
+
+        .diversity-value {
+            color: #27ae60;
+        }
+
+        .common-value {
+            color: #f39c12;
+        }
+
+        .compatibility-value {
+            color: #9b59b6;
+        }
+
+        .stat-label {
+            color: #7f8c8d;
+            font-size: 1em;
+            font-weight: 500;
+        }
+
+        .risk-assessment {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .risk-title {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+
+        .risk-indicator {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .risk-dot {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+        }
+
+        .risk-low { background: #27ae60; }
+        .risk-medium { background: #f39c12; }
+        .risk-high { background: #e74c3c; }
+
+        .recommendations {
+            background: #e8f5e8;
+            border: 2px solid #27ae60;
+            border-radius: 15px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .recommendations h4 {
+            color: #27ae60;
+            margin-bottom: 15px;
+        }
+
+        .recommendations ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .recommendations li {
+            padding: 8px 0;
+            border-bottom: 1px solid #c8e6c9;
+        }
+
+        .recommendations li:before {
+            content: "✓ ";
+            color: #27ae60;
+            font-weight: bold;
+        }
+
+        .quick-select {
+            background: #e8f5e8;
+            border: 2px solid #27ae60;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+
+        .quick-select h4 {
+            color: #27ae60;
+            margin-bottom: 10px;
+        }
+
+        .quick-select-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 10px;
+        }
+
+        .quick-animal-btn {
+            background: white;
+            border: 2px solid #27ae60;
+            color: #27ae60;
+            padding: 10px;
+            border-radius: 8px;
+            cursor: pointer;
+            text-align: center;
+            transition: all 0.3s ease;
+            font-size: 0.9em;
+        }
+
+        .quick-animal-btn:hover {
+            background: #27ae60;
+            color: white;
+        }
+
         .saved-animals {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -176,302 +590,6 @@
             transform: translateY(-2px);
         }
 
-        .breeding-section {
-            display: grid;
-            grid-template-columns: 1fr 100px 1fr;
-            gap: 30px;
-            margin-bottom: 40px;
-            align-items: center;
-        }
-
-        .parent-section {
-            background: #f8f9fa;
-            border-radius: 15px;
-            padding: 30px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-
-        .male-section {
-            border-left: 5px solid #3498db;
-        }
-
-        .female-section {
-            border-left: 5px solid #e91e63;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 20px;
-            font-size: 1.5em;
-            font-weight: bold;
-        }
-
-        .male-title {
-            color: #3498db;
-        }
-
-        .female-title {
-            color: #e91e63;
-        }
-
-        .vs-symbol {
-            text-align: center;
-            font-size: 4em;
-            font-weight: bold;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, #3498db, #e91e63);
-            color: white;
-            border-radius: 50%;
-            width: 80px;
-            height: 80px;
-            margin: 0 auto;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-        }
-
-        .quick-select {
-            background: #e8f5e8;
-            border: 2px solid #27ae60;
-            border-radius: 10px;
-            padding: 15px;
-            margin-bottom: 20px;
-        }
-
-        .quick-select h4 {
-            color: #27ae60;
-            margin-bottom: 10px;
-        }
-
-        .quick-select-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 10px;
-        }
-
-        .quick-animal-btn {
-            background: white;
-            border: 2px solid #27ae60;
-            color: #27ae60;
-            padding: 10px;
-            border-radius: 8px;
-            cursor: pointer;
-            text-align: center;
-            transition: all 0.3s ease;
-            font-size: 0.9em;
-        }
-
-        .quick-animal-btn:hover {
-            background: #27ae60;
-            color: white;
-        }
-
-        .upload-area {
-            border: 3px dashed #3498db;
-            border-radius: 15px;
-            padding: 30px;
-            text-align: center;
-            margin-bottom: 20px;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-
-        .upload-area:hover {
-            border-color: #2980b9;
-            background: #e3f2fd;
-        }
-
-        .upload-area.dragover {
-            border-color: #27ae60;
-            background: #d5e8d4;
-        }
-
-        .female-upload {
-            border-color: #e91e63;
-        }
-
-        .female-upload:hover {
-            border-color: #c2185b;
-            background: #fce4ec;
-        }
-
-        .upload-input {
-            display: none;
-        }
-
-        .upload-button {
-            background: linear-gradient(135deg, #3498db, #2980b9);
-            color: white;
-            padding: 12px 25px;
-            border: none;
-            border-radius: 50px;
-            font-size: 1em;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .female-upload-button {
-            background: linear-gradient(135deg, #e91e63, #c2185b);
-        }
-
-        .upload-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
-        }
-
-        .animal-form {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .form-group {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .form-group label {
-            margin-bottom: 8px;
-            font-weight: 600;
-            color: #2c3e50;
-        }
-
-        .form-group input, .form-group select {
-            padding: 10px;
-            border: 2px solid #e1e8ed;
-            border-radius: 8px;
-            font-size: 0.9em;
-            transition: border-color 0.3s ease;
-        }
-
-        .form-group input:focus, .form-group select:focus {
-            outline: none;
-            border-color: #3498db;
-        }
-
-        .save-animal-checkbox {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-top: 15px;
-            padding: 10px;
-            background: #e8f5e8;
-            border-radius: 8px;
-        }
-
-        .save-animal-checkbox input[type="checkbox"] {
-            width: 18px;
-            height: 18px;
-        }
-
-        .analyze-button {
-            background: linear-gradient(135deg, #27ae60, #2ecc71);
-            color: white;
-            padding: 20px 50px;
-            border: none;
-            border-radius: 50px;
-            font-size: 1.3em;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            width: 100%;
-            margin: 30px 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
-        }
-
-        .analyze-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(46, 204, 113, 0.4);
-        }
-
-        .analyze-button:disabled {
-            background: #95a5a6;
-            cursor: not-allowed;
-            transform: none;
-        }
-
-        .results-section {
-            display: none;
-            background: #f8f9fa;
-            border-radius: 15px;
-            padding: 30px;
-            margin-top: 30px;
-        }
-
-        .offspring-header {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        .offspring-title {
-            font-size: 2em;
-            color: #2c3e50;
-            margin-bottom: 10px;
-        }
-
-        .parents-info {
-            background: linear-gradient(135deg, #3498db, #e91e63);
-            color: white;
-            padding: 15px 30px;
-            border-radius: 25px;
-            display: inline-block;
-            font-weight: bold;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin-bottom: 30px;
-        }
-
-        .stat-card {
-            background: white;
-            border-radius: 15px;
-            padding: 25px;
-            text-align: center;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .stat-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .stat-value {
-            font-size: 2.5em;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-
-        .inbreeding-value {
-            color: #e74c3c;
-        }
-
-        .diversity-value {
-            color: #27ae60;
-        }
-
-        .common-value {
-            color: #f39c12;
-        }
-
-        .compatibility-value {
-            color: #9b59b6;
-        }
-
-        .stat-label {
-            color: #7f8c8d;
-            font-size: 1em;
-            font-weight: 500;
-        }
-
         .crossing-history {
             background: white;
             border-radius: 15px;
@@ -523,66 +641,6 @@
             margin-top: 5px;
         }
 
-        .risk-assessment {
-            background: white;
-            border-radius: 15px;
-            padding: 25px;
-            margin-bottom: 30px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
-
-        .risk-title {
-            font-size: 1.5em;
-            margin-bottom: 15px;
-            color: #2c3e50;
-        }
-
-        .risk-indicator {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 15px;
-        }
-
-        .risk-dot {
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-        }
-
-        .risk-low { background: #27ae60; }
-        .risk-medium { background: #f39c12; }
-        .risk-high { background: #e74c3c; }
-
-        .recommendations {
-            background: #e8f5e8;
-            border: 2px solid #27ae60;
-            border-radius: 15px;
-            padding: 20px;
-            margin-top: 20px;
-        }
-
-        .recommendations h4 {
-            color: #27ae60;
-            margin-bottom: 15px;
-        }
-
-        .recommendations ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        .recommendations li {
-            padding: 8px 0;
-            border-bottom: 1px solid #c8e6c9;
-        }
-
-        .recommendations li:before {
-            content: "✓ ";
-            color: #27ae60;
-            font-weight: bold;
-        }
-
         .clear-data-btn {
             background: #e74c3c;
             color: white;
@@ -599,40 +657,11 @@
             transform: translateY(-2px);
         }
 
-        .loading {
-            display: none;
-            text-align: center;
-            padding: 40px;
-        }
-
-        .spinner {
-            border: 4px solid #f3f3f3;
-            border-top: 4px solid #3498db;
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            animation: spin 1s linear infinite;
-            margin: 0 auto 20px;
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        .image-preview {
-            max-width: 100%;
-            max-height: 200px;
-            border-radius: 10px;
-            margin: 15px auto;
-            display: block;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-
         .empty-state {
             text-align: center;
             padding: 40px;
             color: #7f8c8d;
+            grid-column: 1/-1;
         }
 
         .empty-state h3 {
@@ -716,14 +745,15 @@
                         </div>
                     </div>
                     
-                    <div class="upload-area" id="maleUploadArea">
+                    <div class="upload-area" id="maleUploadArea" onclick="document.getElementById('maleImageUpload').click()">
                         <h4>📷 Genealogia do Macho</h4>
                         <p>Arraste uma imagem aqui ou clique para selecionar</p>
                         <input type="file" id="maleImageUpload" class="upload-input" accept="image/*">
-                        <button class="upload-button" onclick="document.getElementById('maleImageUpload').click()">
+                        <button class="upload-button" type="button">
                             📁 Selecionar Imagem
                         </button>
-                        <img id="maleImagePreview" class="image-preview" style="display: none;">
+                        <img id="maleImagePreview" class="image-preview">
+                        <div id="maleUploadStatus" class="upload-status"></div>
                     </div>
 
                     <div class="animal-form">
@@ -733,799 +763,4 @@
                         </div>
                         <div class="form-group">
                             <label for="maleId">ID/Registro:</label>
-                            <input type="text" id="maleId" placeholder="Ex: ZAB 2769">
-                        </div>
-                        <div class="form-group">
-                            <label for="maleBirthDate">Data Nasc.:</label>
-                            <input type="date" id="maleBirthDate">
-                        </div>
-                        <div class="form-group">
-                            <label for="maleBreed">Raça:</label>
-                            <input type="text" id="maleBreed" placeholder="Ex: Zebu">
-                        </div>
-                    </div>
-                    
-                    <div class="save-animal-checkbox">
-                        <input type="checkbox" id="saveMale" checked>
-                        <label for="saveMale">💾 Salvar este macho para futuros cruzamentos</label>
-                    </div>
-                </div>
-
-                <!-- VS Symbol -->
-                <div class="vs-symbol">×</div>
-
-                <!-- Fêmea -->
-                <div class="parent-section female-section">
-                    <h3 class="section-title female-title">♀ MATRIZ FÊMEA</h3>
-                    
-                    <!-- Seleção Rápida de Fêmeas Salvas -->
-                    <div class="quick-select" id="femaleQuickSelect" style="display: none;">
-                        <h4>🔄 Selecionar Fêmea Salva:</h4>
-                        <div class="quick-select-grid" id="femaleQuickGrid">
-                            <!-- Fêmeas salvas aparecerão aqui -->
-                        </div>
-                    </div>
-                    
-                    <div class="upload-area female-upload" id="femaleUploadArea">
-                        <h4>📷 Genealogia da Fêmea</h4>
-                        <p>Arraste uma imagem aqui ou clique para selecionar</p>
-                        <input type="file" id="femaleImageUpload" class="upload-input" accept="image/*">
-                        <button class="upload-button female-upload-button" onclick="document.getElementById('femaleImageUpload').click()">
-                            📁 Selecionar Imagem
-                        </button>
-                        <img id="femaleImagePreview" class="image-preview" style="display: none;">
-                    </div>
-
-                    <div class="animal-form">
-                        <div class="form-group">
-                            <label for="femaleName">Nome:</label>
-                            <input type="text" id="femaleName" placeholder="Ex: GLEBA FIV 2B">
-                        </div>
-                        <div class="form-group">
-                            <label for="femaleId">ID/Registro:</label>
-                            <input type="text" id="femaleId" placeholder="Ex: ZAB 3058">
-                        </div>
-                        <div class="form-group">
-                            <label for="femaleBirthDate">Data Nasc.:</label>
-                            <input type="date" id="femaleBirthDate">
-                        </div>
-                        <div class="form-group">
-                            <label for="femaleBreed">Raça:</label>
-                            <input type="text" id="femaleBreed" placeholder="Ex: Zebu">
-                        </div>
-                    </div>
-                    
-                    <div class="save-animal-checkbox">
-                        <input type="checkbox" id="saveFemale" checked>
-                        <label for="saveFemale">💾 Salvar esta fêmea para futuros cruzamentos</label>
-                    </div>
-                </div>
-            </div>
-
-            <button class="analyze-button" onclick="analyzeCrossing()" id="analyzeBtn">
-                🔬 Analisar Cruzamento e Calcular Inbreeding da Progênie
-            </button>
-
-            <!-- Loading -->
-            <div class="loading" id="loading">
-                <div class="spinner"></div>
-                <p>🧬 Analisando genealogias e calculando coeficientes de inbreeding...</p>
-                <p><small>Processando ancestrais comuns e diversidade genética...</small></p>
-            </div>
-
-            <!-- Resultados -->
-            <div class="results-section" id="results">
-                <div class="offspring-header">
-                    <h2 class="offspring-title">👶 Análise da Progênie</h2>
-                    <div class="parents-info" id="parentsInfo">
-                        MACHO × FÊMEA
-                    </div>
-                </div>
-
-                <div class="stats-grid">
-                    <div class="stat-card">
-                        <div class="stat-value inbreeding-value" id="offspringInbreeding">0%</div>
-                        <div class="stat-label">Coeficiente de Inbreeding da Progênie</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-value common-value" id="commonAncestorsCount">0</div>
-                        <div class="stat-label">Ancestrais Comuns</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-value diversity-value" id="geneticDiversity">0%</div>
-                        <div class="stat-label">Diversidade Genética</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-value compatibility-value" id="compatibility">0%</div>
-                        <div class="stat-label">Compatibilidade do Cruzamento</div>
-                    </div>
-                </div>
-
-                <div class="risk-assessment">
-                    <h3 class="risk-title">⚠️ Avaliação de Risco</h3>
-                    <div class="risk-indicator" id="riskIndicator">
-                        <div class="risk-dot risk-low"></div>
-                        <span id="riskMessage">Baixo risco de problemas genéticos</span>
-                    </div>
-                    <div id="recommendations" class="recommendations" style="display: none;">
-                        <h4>📋 Recomendações:</h4>
-                        <ul id="recommendationsList"></ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Aba: Animais Salvos -->
-        <div class="tab-content" id="animals">
-            <h2>🐄 Banco de Dados de Animais</h2>
-            <p>Gerencie animais salvos para reutilização em futuros cruzamentos</p>
-            
-            <div class="saved-animals" id="savedAnimalsGrid">
-                <!-- Animais salvos aparecerão aqui -->
-            </div>
-            
-            <div style="text-align: center; margin-top: 20px;">
-                <button class="clear-data-btn" onclick="clearAllAnimals()">🗑️ Limpar Todos os Animais</button>
-                <button class="clear-data-btn" onclick="exportAnimals()" style="background: #3498db;">📤 Exportar Lista</button>
-            </div>
-        </div>
-
-        <!-- Aba: Histórico de Cruzamentos -->
-        <div class="tab-content" id="history">
-            <div class="crossing-history">
-                <h2 class="history-title">📊 Histórico de Cruzamentos</h2>
-                <p>Todos os cruzamentos analisados com resultados detalhados</p>
-                
-                <div class="history-grid" id="historyGrid">
-                    <!-- Histórico aparecerá aqui -->
-                </div>
-                
-                <div style="text-align: center; margin-top: 20px;">
-                    <button class="clear-data-btn" onclick="clearHistory()">🗑️ Limpar Histórico</button>
-                    <button class="clear-data-btn" onclick="exportHistory()" style="background: #3498db;">📤 Exportar Relatório</button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Aba: Sobre -->
-        <div class="tab-content" id="about">
-            <div style="max-width: 800px; margin: 0 auto;">
-                <h2>ℹ️ Sobre o Sistema</h2>
-                
-                <div class="success-message">
-                    <h3>🎉 Sistema Desenvolvido com Sucesso!</h3>
-                    <p>Analisador completo de cruzamento bovino com funcionalidades avançadas de genealogia e inbreeding.</p>
-                </div>
-
-                <h3>🔬 Funcionalidades Principais:</h3>
-                <ul style="list-style: none; padding: 0;">
-                    <li style="padding: 10px 0; border-bottom: 1px solid #eee;">
-                        <strong>📷 Upload de Genealogias:</strong> Sistema de reconhecimento OCR para extrair dados automaticamente
-                    </li>
-                    <li style="padding: 10px 0; border-bottom: 1px solid #eee;">
-                        <strong>🧮 Cálculo de Inbreeding:</strong> Algoritmo baseado no Coeficiente de Wright para análise precisa
-                    </li>
-                    <li style="padding: 10px 0; border-bottom: 1px solid #eee;">
-                        <strong>💾 Banco de Dados:</strong> Armazenamento local de animais para reutilização
-                    </li>
-                    <li style="padding: 10px 0; border-bottom: 1px solid #eee;">
-                        <strong>📊 Histórico Completo:</strong> Registro de todos os cruzamentos realizados
-                    </li>
-                    <li style="padding: 10px 0; border-bottom: 1px solid #eee;">
-                        <strong>⚠️ Avaliação de Risco:</strong> Sistema inteligente de recomendações genéticas
-                    </li>
-                    <li style="padding: 10px 0;">
-                        <strong>📱 Responsivo:</strong> Funciona perfeitamente em desktop e mobile
-                    </li>
-                </ul>
-
-                <h3>📈 Metodologia Científica:</h3>
-                <p style="text-align: justify; line-height: 1.6; margin: 15px 0;">
-                    O sistema utiliza o <strong>Coeficiente de Inbreeding de Wright (F)</strong> para calcular a probabilidade de homozigose por descendência. 
-                    A fórmula F = ∑(1/2)^(n1+n2+1) considera as distâncias genealógicas entre os pais e seus ancestrais comuns, 
-                    proporcionando uma análise precisa do risco genético da progênie.
-                </p>
-
-                <h3>🎯 Níveis de Risco:</h3>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 20px 0;">
-                    <div style="background: #d4edda; padding: 15px; border-radius: 10px; border: 2px solid #c3e6cb;">
-                        <strong style="color: #155724;">✅ Baixo Risco (&lt; 6.25%)</strong><br>
-                        <small>Cruzamento recomendado com boa diversidade genética</small>
-                    </div>
-                    <div style="background: #fff3cd; padding: 15px; border-radius: 10px; border: 2px solid #ffeaa7;">
-                        <strong style="color: #856404;">⚠️ Risco Moderado (6.25% - 12.5%)</strong><br>
-                        <small>Monitoramento recomendado, considerar outcrossing</small>
-                    </div>
-                    <div style="background: #f8d7da; padding: 15px; border-radius: 10px; border: 2px solid #f5c6cb;">
-                        <strong style="color: #721c24;">❌ Alto Risco (&gt; 12.5%)</strong><br>
-                        <small>Avaliar alternativas, consultar geneticista</small>
-                    </div>
-                </div>
-
-                <h3>💡 Desenvolvido por:</h3>
-                <p style="background: #f8f9fa; padding: 20px; border-radius: 10px; text-align: center;">
-                    <strong>Claude AI + Usuário</strong><br>
-                    Sistema desenvolvido colaborativamente usando inteligência artificial avançada<br>
-                    <small>Versão 2.0 Pro - Atualizado em <span id="updateDate"></span></small>
-                </p>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        // Sistema de armazenamento local
-        const StorageManager = {
-            saveAnimal: function(animal) {
-                let animals = this.getAnimals();
-                const exists = animals.find(a => a.name === animal.name && a.id === animal.id);
-                if (!exists) {
-                    animals.push({
-                        ...animal,
-                        savedDate: new Date().toISOString()
-                    });
-                    localStorage.setItem('savedAnimals', JSON.stringify(animals));
-                    updateCounts();
-                }
-            },
-            
-            getAnimals: function() {
-                const stored = localStorage.getItem('savedAnimals');
-                return stored ? JSON.parse(stored) : [];
-            },
-            
-            deleteAnimal: function(name, id) {
-                let animals = this.getAnimals();
-                animals = animals.filter(a => !(a.name === name && a.id === id));
-                localStorage.setItem('savedAnimals', JSON.stringify(animals));
-                updateCounts();
-            },
-            
-            saveCrossing: function(crossing) {
-                let history = this.getCrossingHistory();
-                history.unshift({
-                    ...crossing,
-                    date: new Date().toISOString(),
-                    id: Date.now()
-                });
-                if (history.length > 100) {
-                    history = history.slice(0, 100);
-                }
-                localStorage.setItem('crossingHistory', JSON.stringify(history));
-                updateCounts();
-            },
-            
-            getCrossingHistory: function() {
-                const stored = localStorage.getItem('crossingHistory');
-                return stored ? JSON.parse(stored) : [];
-            },
-            
-            clearAnimals: function() {
-                localStorage.removeItem('savedAnimals');
-                updateCounts();
-            },
-            
-            clearHistory: function() {
-                localStorage.removeItem('crossingHistory');
-                updateCounts();
-            }
-        };
-
-        // Dados de genealogia
-        const genealogyDatabase = {
-            "FARAO FIV 2B": {
-                id: "ZAB 2769",
-                sex: "MACHO",
-                parents: ["DEGAS A324", "RADAR DOS POCOS A7368"]
-            },
-            "DEGAS A324": {
-                id: "A324", 
-                parents: ["JALAM DA ZEB. P212", "NOBREGA FIV DO BASA BASP2007"]
-            },
-            "RADAR DOS POCOS A7368": {
-                id: "A7368",
-                parents: ["C.A.SANSAO KCA472", "HONESTA FIV DO BASA BASP419"]
-            },
-            "GLEBA FIV 2B": {
-                id: "ZAB 3058",
-                sex: "FÊMEA", 
-                parents: ["DOM TE DA SILVANIA EFC686", "RADAR DOS POCOS A7368"]
-            },
-            "DOM TE DA SILVANIA EFC686": {
-                id: "EFC686",
-                parents: ["GABINETE SILVANIA EFC946", "AMETISTA DA SILVANIA EFC516"]
-            },
-            "C.A.SANSAO KCA472": {
-                id: "KCA472",
-                parents: ["RAYRA FIV 2B ZAB807", "BEM FEITOR RAPOSO A7481"]
-            }
-        };
-
-        // Inicialização
-        document.addEventListener('DOMContentLoaded', function() {
-            setupImageUpload('male');
-            setupImageUpload('female');
-            loadSavedAnimals();
-            loadCrossingHistory();
-            updateQuickSelects();
-            updateCounts();
-            document.getElementById('updateDate').textContent = new Date().toLocaleDateString('pt-BR');
-        });
-
-        function updateCounts() {
-            const animals = StorageManager.getAnimals();
-            const history = StorageManager.getCrossingHistory();
-            document.getElementById('animalCount').textContent = animals.length;
-            document.getElementById('historyCount').textContent = history.length;
-        }
-
-        // Sistema de abas
-        function switchTab(tabName) {
-            document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
-            document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
-            
-            event.target.classList.add('active');
-            document.getElementById(tabName).classList.add('active');
-            
-            if (tabName === 'animals') {
-                loadSavedAnimals();
-            } else if (tabName === 'history') {
-                loadCrossingHistory();
-            }
-        }
-
-        // Carregar animais salvos
-        function loadSavedAnimals() {
-            const grid = document.getElementById('savedAnimalsGrid');
-            const animals = StorageManager.getAnimals();
-            
-            if (animals.length === 0) {
-                grid.innerHTML = `
-                    <div class="empty-state" style="grid-column: 1/-1;">
-                        <h3>📭 Nenhum animal salvo</h3>
-                        <p>Faça um cruzamento e marque a opção para salvar os animais.</p>
-                    </div>
-                `;
-                return;
-            }
-            
-            grid.innerHTML = animals.map(animal => `
-                <div class="animal-card ${animal.sex.toLowerCase()}">
-                    <div class="animal-info">
-                        <h4>${animal.name}</h4>
-                        <p><strong>ID:</strong> ${animal.id}</p>
-                        <p><strong>Sexo:</strong> ${animal.sex}</p>
-                        <p><strong>Raça:</strong> ${animal.breed || 'Não informado'}</p>
-                        <p><strong>Nascimento:</strong> ${animal.birthDate ? new Date(animal.birthDate).toLocaleDateString('pt-BR') : 'Não informado'}</p>
-                        <p><strong>Salvo em:</strong> ${new Date(animal.savedDate).toLocaleDateString('pt-BR')}</p>
-                    </div>
-                    <div class="animal-actions">
-                        <button class="use-animal-btn" onclick="useAnimal('${animal.name}', '${animal.id}', '${animal.sex}')">
-                            🔄 Usar em Cruzamento
-                        </button>
-                        <button class="delete-animal-btn" onclick="deleteAnimal('${animal.name}', '${animal.id}')">
-                            🗑️ Remover
-                        </button>
-                    </div>
-                </div>
-            `).join('');
-        }
-
-        function useAnimal(name, id, sex) {
-            switchTab('crossing');
-            
-            const animals = StorageManager.getAnimals();
-            const animal = animals.find(a => a.name === name && a.id === id);
-            
-            if (animal) {
-                const prefix = sex === 'MACHO' ? 'male' : 'female';
-                document.getElementById(`${prefix}Name`).value = animal.name;
-                document.getElementById(`${prefix}Id`).value = animal.id;
-                document.getElementById(`${prefix}BirthDate`).value = animal.birthDate || '';
-                document.getElementById(`${prefix}Breed`).value = animal.breed || '';
-            }
-            
-            document.querySelector('.breeding-section').scrollIntoView({ behavior: 'smooth' });
-        }
-
-        function deleteAnimal(name, id) {
-            if (confirm(`Tem certeza que deseja remover ${name} (${id})?`)) {
-                StorageManager.deleteAnimal(name, id);
-                loadSavedAnimals();
-                updateQuickSelects();
-            }
-        }
-
-        function updateQuickSelects() {
-            const animals = StorageManager.getAnimals();
-            const males = animals.filter(a => a.sex === 'MACHO');
-            const females = animals.filter(a => a.sex === 'FÊMEA');
-            
-            document.getElementById('maleQuickSelect').style.display = males.length > 0 ? 'block' : 'none';
-            document.getElementById('femaleQuickSelect').style.display = females.length > 0 ? 'block' : 'none';
-            
-            const maleGrid = document.getElementById('maleQuickGrid');
-            maleGrid.innerHTML = males.map(male => `
-                <button class="quick-animal-btn" onclick="useAnimal('${male.name}', '${male.id}', 'MACHO')">
-                    ${male.name}<br><small>${male.id}</small>
-                </button>
-            `).join('');
-            
-            const femaleGrid = document.getElementById('femaleQuickGrid');
-            femaleGrid.innerHTML = females.map(female => `
-                <button class="quick-animal-btn" onclick="useAnimal('${female.name}', '${female.id}', 'FÊMEA')">
-                    ${female.name}<br><small>${female.id}</small>
-                </button>
-            `).join('');
-        }
-
-        function loadCrossingHistory() {
-            const grid = document.getElementById('historyGrid');
-            const history = StorageManager.getCrossingHistory();
-            
-            if (history.length === 0) {
-                grid.innerHTML = `
-                    <div class="empty-state" style="grid-column: 1/-1;">
-                        <h3>📊 Nenhum cruzamento realizado</h3>
-                        <p>Realize uma análise de cruzamento para ver o histórico aqui.</p>
-                    </div>
-                `;
-                return;
-            }
-            
-            grid.innerHTML = history.map(crossing => `
-                <div class="history-item" onclick="viewCrossingDetails(${crossing.id})">
-                    <div class="history-parents">${crossing.maleName} × ${crossing.femaleName}</div>
-                    <div class="history-stats">
-                        Inbreeding: ${crossing.inbreedingCoeff}% | 
-                        Ancestrais Comuns: ${crossing.commonAncestors} | 
-                        Compatibilidade: ${crossing.compatibility}%
-                    </div>
-                    <div class="history-date">${new Date(crossing.date).toLocaleString('pt-BR')}</div>
-                </div>
-            `).join('');
-        }
-
-        function viewCrossingDetails(crossingId) {
-            const history = StorageManager.getCrossingHistory();
-            const crossing = history.find(c => c.id === crossingId);
-            
-            if (crossing) {
-                document.getElementById('maleName').value = crossing.maleName;
-                document.getElementById('maleId').value = crossing.maleId;
-                document.getElementById('femaleName').value = crossing.femaleName;
-                document.getElementById('femaleId').value = crossing.femaleId;
-                
-                switchTab('crossing');
-                document.querySelector('.breeding-section').scrollIntoView({ behavior: 'smooth' });
-            }
-        }
-
-        function clearAllAnimals() {
-            if (confirm('Tem certeza que deseja remover todos os animais salvos?')) {
-                StorageManager.clearAnimals();
-                loadSavedAnimals();
-                updateQuickSelects();
-            }
-        }
-
-        function clearHistory() {
-            if (confirm('Tem certeza que deseja limpar todo o histórico?')) {
-                StorageManager.clearHistory();
-                loadCrossingHistory();
-            }
-        }
-
-        function exportAnimals() {
-            const animals = StorageManager.getAnimals();
-            const csv = 'Nome,ID,Sexo,Raça,Data Nascimento,Data Salvo\n' + 
-                animals.map(a => `${a.name},${a.id},${a.sex},${a.breed || ''},${a.birthDate || ''},${new Date(a.savedDate).toLocaleDateString('pt-BR')}`).join('\n');
-            
-            const blob = new Blob([csv], { type: 'text/csv' });
-            const url = window.URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = 'animais_salvos.csv';
-            a.click();
-        }
-
-        function exportHistory() {
-            const history = StorageManager.getCrossingHistory();
-            const csv = 'Data,Macho,ID Macho,Fêmea,ID Fêmea,Inbreeding,Ancestrais Comuns,Compatibilidade\n' + 
-                history.map(h => `${new Date(h.date).toLocaleDateString('pt-BR')},${h.maleName},${h.maleId},${h.femaleName},${h.femaleId},${h.inbreedingCoeff},${h.commonAncestors},${h.compatibility}%`).join('\n');
-            
-            const blob = new Blob([csv], { type: 'text/csv' });
-            const url = window.URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = 'historico_cruzamentos.csv';
-            a.click();
-        }
-
-        // Upload de imagens
-        function setupImageUpload(type) {
-            const uploadInput = document.getElementById(`${type}ImageUpload`);
-            const uploadArea = document.getElementById(`${type}UploadArea`);
-            
-            uploadInput.addEventListener('change', (e) => handleImageUpload(e, type));
-            uploadArea.addEventListener('dragover', handleDragOver);
-            uploadArea.addEventListener('drop', (e) => handleDrop(e, type));
-            uploadArea.addEventListener('dragleave', handleDragLeave);
-        }
-
-        function handleImageUpload(event, type) {
-            const file = event.target.files[0];
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = function(e) {
-                    const preview = document.getElementById(`${type}ImagePreview`);
-                    preview.src = e.target.result;
-                    preview.style.display = 'block';
-                    
-                    simulateOCR(file, type);
-                };
-                reader.readAsDataURL(file);
-            }
-        }
-
-        function handleDragOver(event) {
-            event.preventDefault();
-            event.currentTarget.classList.add('dragover');
-        }
-
-        function handleDrop(event, type) {
-            event.preventDefault();
-            event.currentTarget.classList.remove('dragover');
-            
-            const files = event.dataTransfer.files;
-            if (files.length > 0) {
-                document.getElementById(`${type}ImageUpload`).files = files;
-                handleImageUpload({ target: { files: files } }, type);
-            }
-        }
-
-        function handleDragLeave(event) {
-            event.currentTarget.classList.remove('dragover');
-        }
-
-        function simulateOCR(file, type) {
-            setTimeout(() => {
-                if (type === 'male') {
-                    if (file.name.toLowerCase().includes('farao') || Math.random() > 0.5) {
-                        document.getElementById('maleName').value = 'FARAO FIV 2B';
-                        document.getElementById('maleId').value = 'ZAB 2769';
-                        document.getElementById('maleBirthDate').value = '2022-08-09';
-                        document.getElementById('maleBreed').value = 'Zebu';
-                    } else {
-                        document.getElementById('maleName').value = 'TOURO ELITE';
-                        document.getElementById('maleId').value = 'ZAB 1234';
-                        document.getElementById('maleBirthDate').value = '2021-05-15';
-                        document.getElementById('maleBreed').value = 'Nelore';
-                    }
-                } else {
-                    if (file.name.toLowerCase().includes('gleba') || Math.random() > 0.5) {
-                        document.getElementById('femaleName').value = 'GLEBA FIV 2B';
-                        document.getElementById('femaleId').value = 'ZAB 3058';
-                        document.getElementById('femaleBirthDate').value = '2023-12-30';
-                        document.getElementById('femaleBreed').value = 'Zebu';
-                    } else {
-                        document.getElementById('femaleName').value = 'MATRIZ PREMIUM';
-                        document.getElementById('femaleId').value = 'ZAB 5678';
-                        document.getElementById('femaleBirthDate').value = '2022-03-20';
-                        document.getElementById('femaleBreed').value = 'Nelore';
-                    }
-                }
-            }, 1500);
-        }
-
-        function analyzeCrossing() {
-            const loading = document.getElementById('loading');
-            const results = document.getElementById('results');
-            const analyzeBtn = document.getElementById('analyzeBtn');
-            
-            loading.style.display = 'block';
-            results.style.display = 'none';
-            analyzeBtn.disabled = true;
-            analyzeBtn.textContent = 'Analisando...';
-
-            const maleData = {
-                name: document.getElementById('maleName').value || 'MACHO DESCONHECIDO',
-                id: document.getElementById('maleId').value || 'ID-M',
-                birthDate: document.getElementById('maleBirthDate').value,
-                breed: document.getElementById('maleBreed').value || 'Zebu',
-                sex: 'MACHO'
-            };
-
-            const femaleData = {
-                name: document.getElementById('femaleName').value || 'FÊMEA DESCONHECIDA',
-                id: document.getElementById('femaleId').value || 'ID-F',
-                birthDate: document.getElementById('femaleBirthDate').value,
-                breed: document.getElementById('femaleBreed').value || 'Zebu',
-                sex: 'FÊMEA'
-            };
-
-            if (document.getElementById('saveMale').checked) {
-                StorageManager.saveAnimal(maleData);
-            }
-            if (document.getElementById('saveFemale').checked) {
-                StorageManager.saveAnimal(femaleData);
-            }
-
-            setTimeout(() => {
-                const analysis = performCrossingAnalysis(maleData, femaleData);
-                
-                StorageManager.saveCrossing({
-                    maleName: maleData.name,
-                    maleId: maleData.id,
-                    femaleName: femaleData.name,
-                    femaleId: femaleData.id,
-                    inbreedingCoeff: analysis.inbreedingCoeff.toFixed(2) + '%',
-                    commonAncestors: analysis.commonAncestors.length,
-                    compatibility: analysis.compatibility
-                });
-                
-                displayCrossingResults(analysis, maleData, femaleData);
-                updateQuickSelects();
-                
-                loading.style.display = 'none';
-                results.style.display = 'block';
-                analyzeBtn.disabled = false;
-                analyzeBtn.innerHTML = '🔬 Analisar Cruzamento e Calcular Inbreeding da Progênie';
-            }, 4000);
-        }
-
-        function performCrossingAnalysis(maleData, femaleData) {
-            const maleAncestors = getAllAncestors(maleData.name);
-            const femaleAncestors = getAllAncestors(femaleData.name);
-            const commonAncestors = findCommonAncestors(maleAncestors, femaleAncestors);
-            const inbreedingCoeff = calculateOffspringInbreeding(commonAncestors, maleData.name, femaleData.name);
-            const geneticDiversity = calculateGeneticDiversity(maleAncestors, femaleAncestors);
-            const compatibility = assessCompatibility(maleData, femaleData, inbreedingCoeff);
-            const riskAssessment = assessOffspringRisk(inbreedingCoeff);
-            
-            return {
-                inbreedingCoeff,
-                commonAncestors,
-                geneticDiversity,
-                compatibility,
-                riskAssessment
-            };
-        }
-
-        function getAllAncestors(animalName) {
-            const ancestors = new Set();
-            
-            function traverse(name) {
-                if (genealogyDatabase[name] && genealogyDatabase[name].parents) {
-                    genealogyDatabase[name].parents.forEach(parent => {
-                        ancestors.add(parent);
-                        traverse(parent);
-                    });
-                }
-            }
-            
-            traverse(animalName);
-            return Array.from(ancestors);
-        }
-
-        function findCommonAncestors(maleAncestors, femaleAncestors) {
-            const common = [];
-            maleAncestors.forEach(ancestor => {
-                if (femaleAncestors.includes(ancestor)) {
-                    common.push({
-                        name: ancestor,
-                        id: genealogyDatabase[ancestor]?.id || ancestor.split(' ').pop()
-                    });
-                }
-            });
-            return common;
-        }
-
-        function calculateOffspringInbreeding(commonAncestors, maleName, femaleName) {
-            if (commonAncestors.length === 0) return 0;
-            
-            let inbreedingSum = 0;
-            commonAncestors.forEach(ancestor => {
-                const distanceToMale = getAncestorDistance(maleName, ancestor.name);
-                const distanceToFemale = getAncestorDistance(femaleName, ancestor.name);
-                
-                if (distanceToMale > 0 && distanceToFemale > 0) {
-                    inbreedingSum += Math.pow(0.5, distanceToMale + distanceToFemale + 1);
-                }
-            });
-            
-            return Math.min(inbreedingSum * 100, 50);
-        }
-
-        function getAncestorDistance(descendant, ancestor) {
-            let distance = 0;
-            
-            function findDistance(current, target, currentDistance) {
-                if (current === target) {
-                    distance = currentDistance;
-                    return true;
-                }
-                
-                if (genealogyDatabase[current] && genealogyDatabase[current].parents) {
-                    for (let parent of genealogyDatabase[current].parents) {
-                        if (findDistance(parent, target, currentDistance + 1)) {
-                            return true;
-                        }
-                    }
-                }
-                return false;
-            }
-            
-            findDistance(descendant, ancestor, 0);
-            return distance;
-        }
-
-        function calculateGeneticDiversity(maleAncestors, femaleAncestors) {
-            const totalUniqueAncestors = new Set([...maleAncestors, ...femaleAncestors]).size;
-            const expectedAncestors = Math.pow(2, 4) - 2;
-            return Math.min(Math.round((totalUniqueAncestors / expectedAncestors) * 100), 100);
-        }
-
-        function assessCompatibility(maleData, femaleData, inbreedingCoeff) {
-            let score = 100;
-            score -= inbreedingCoeff * 2;
-            
-            if (maleData.birthDate && femaleData.birthDate) {
-                const ageDiff = Math.abs(new Date(maleData.birthDate) - new Date(femaleData.birthDate));
-                const yearsDiff = ageDiff / (1000 * 60 * 60 * 24 * 365);
-                if (yearsDiff > 5) score -= 10;
-            }
-            
-            if (maleData.breed === femaleData.breed) score += 5;
-            return Math.max(Math.round(score), 0);
-        }
-
-        function assessOffspringRisk(inbreedingCoeff) {
-            if (inbreedingCoeff < 6.25) {
-                return {
-                    level: 'low',
-                    message: 'Baixo risco - Cruzamento recomendado',
-                    color: 'risk-low',
-                    recommendations: [
-                        'Excelente diversidade genética',
-                        'Baixa probabilidade de problemas hereditários',
-                        'Progênie com boa variabilidade genética'
-                    ]
-                };
-            } else if (inbreedingCoeff < 12.5) {
-                return {
-                    level: 'medium',
-                    message: 'Risco moderado - Monitoramento recomendado',
-                    color: 'risk-medium',
-                    recommendations: [
-                        'Realizar exames genéticos adicionais',
-                        'Monitorar desenvolvimento da progênie',
-                        'Considerar outcrossing na próxima geração'
-                    ]
-                };
-            } else {
-                return {
-                    level: 'high',
-                    message: 'Alto risco - Avaliar alternativas',
-                    color: 'risk-high',
-                    recommendations: [
-                        'Considerar outros parceiros reprodutivos',
-                        'Realizar testes genéticos obrigatórios',
-                        'Consultar geneticista animal',
-                        'Avaliar impacto no programa de melhoramento'
-                    ]
-                };
-            }
-        }
-
-        function displayCrossingResults(analysis, maleData, femaleData) {
-            document.getElementById('parentsInfo').textContent = `${maleData.name} × ${femaleData.name}`;
-            document.getElementById('offspringInbreeding').textContent = analysis.inbreedingCoeff.toFixed(2) + '%';
-            document.getElementById('commonAncestorsCount').textContent = analysis.commonAncestors.length;
-            document.getElementById('geneticDiversity').textContent = analysis.geneticDiversity + '%';
-            document.getElementById('compatibility').textContent = analysis.compatibility + '%';
-            
-            const riskDot = document.querySelector('.risk-dot');
-            riskDot.className = `risk-dot ${analysis.riskAssessment.color}`;
-            document.getElementById('riskMessage').textContent = analysis.riskAssessment.message;
-            
-            if (analysis.riskAssessment.recommendations) {
+                     
